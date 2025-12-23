@@ -1,226 +1,55 @@
-# Qayas Mehtab
+# 📦 Banggood Product Data Pipeline & Analysis
 
-**Cloud Data Engineer (Junior / Entry-Level)**
-Karachi, Pakistan
-📧 Email: [qayasabbasi98@gmail.com](mailto:qayasabbasi98@gmail.com)
-🔗 GitHub: [https://github.com/qayasmehtab](https://github.com/qayasmehtab)
-🔗 LinkedIn: [https://www.linkedin.com/in/qayas-mehtab](https://www.linkedin.com/in/qayas-mehtab)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
 
----
-
-## Professional Summary
-
-Aspiring **Cloud Data Engineer** currently pursuing Cloud Data Engineering training with hands-on practice in Python, SQL, ETL pipelines, and cloud platforms. Strong background in inventory management, procurement, and operational data handling with 9 years of professional experience in the airline industry. Passionate about building scalable data pipelines, automating workflows, and working in cloud-based data environments.
+An end-to-end data engineering pipeline that automates the journey from **Web Scraping** to **Interactive Visualization**. This project extracts real-time product data from Banggood.com, cleans it, stores it in a relational database, and presents it via a modern dashboard.
 
 ---
 
-## Technical Skills
+## 🎯 Project Overview
 
-* **Programming:** Python, NumPy, Pandas, Matplotlib
-* **Data Engineering:** ETL Pipelines, Data Cleaning, Data Transformation
-* **Databases:** SQL
-* **Cloud & Data Platforms:** AWS (Basics), Snowflake (Fundamentals)
-* **Tools & Technologies:** Git, GitHub, Linux (Ubuntu)
-
----
-
-## Education
-
-**Bachelor of Commerce (B.Com)**
-Karachi, Pakistan
-
-**Cloud Data Engineering** *(Ongoing)*
-SMIT Karachi / National Community College
+This pipeline is designed to solve the problem of manual market research. It automates:
+1. **Data Acquisition**: Scraping 5+ product categories.
+2. **Data Wrangling**: Cleaning messy web data into structured formats.
+3. **Database Management**: Moving CSV data into a robust SQL environment.
+4. **Business Intelligence**: Creating a live dashboard for price and rating analysis.
 
 ---
 
-## Professional Experience
+## 🛠️ Tech Stack & Workflow
 
-### Procurement & Warehouse Supervisor – Airblue
+### 1. Web Scraping & Cleaning
+- **Scraper**: Built with Python to capture Product Name, Price, Ratings, and Reviews.
+- **Cleaning**: Using `Pandas` to handle missing values, remove duplicates, and fix data types.
 
-**Karachi | 9 Years Experience**
+### 2. Storage & Analysis (SQL & EDA)
+- **Database**: `SQLite` integration for structured storage and category-wise table management.
+- **EDA**: Statistical analysis using `Matplotlib` and `Seaborn` to find the "Cheapest vs Expensive" and "Rating Trends".
 
-* Managed inventory and procurement data with high accuracy
-* Maintained detailed stock reports and operational documentation
-* Coordinated with multiple departments to improve supply chain efficiency
-* Handled large datasets and prepared regular operational reports
-* Supported system improvements and process optimization initiatives
-
----
-
-## Academic & Practical Exposure
-
-* Data analysis using Python libraries (Pandas, NumPy)
-* Data visualization using Matplotlib
-* Writing SQL queries for data extraction and reporting
-* Understanding of cloud-based data workflows and storage
+### 3. Dashboard (UI)
+- **Streamlit**: An interactive web app to filter products by category and visualize pricing distributions in real-time.
 
 ---
 
-## Certifications & Training
+## 📁 Project Structure
 
-* Cloud Data Engineering *(In Progress)*
-* Python for Data Analysis
-* Linux & GitHub Fundamentals
-
----
-
-## Featured Project
-
-### 📦 Banggood Product Data Pipeline & Analysis
-
-*A complete, end-to-end data engineering project designed to demonstrate real-world data workflows in a cloud-ready environment.*
-
-This project showcases my practical skills as a **Cloud Data Engineer**, covering the full lifecycle of data handling — from web scraping to analysis and interactive visualization — implemented in a clean, modular, and production-style structure.
-
----
-
-### 🔍 Project Overview
-
-The pipeline automates a complete data workflow:
-
-**1. Web Scraping**
-
-* Scraped product data from **5 Banggood categories**
-* Extracted key attributes:
-
-  * Product Name
-  * Price
-  * Rating
-  * Number of Reviews
-  * Product URL
-
-**2. Data Cleaning & Transformation**
-
-* Handled missing and inconsistent values
-* Converted data types for analysis readiness
-* Cleaned price and rating formats
-* Removed duplicate records to ensure data accuracy
-
-**3. Exploratory Data Analysis (EDA)**
-
-* Identified top-rated products
-* Analyzed price distribution
-* Compared cheapest vs. most expensive products
-* Category-level insights based on ratings and reviews
-
-**4. SQL Data Pipeline**
-
-* Stored cleaned datasets in **SQLite**
-* Created category-wise tables
-* Performed aggregation queries for analytical insights
-
-**5. Interactive Dashboard (Streamlit)**
-
-* Built an interactive dashboard for product analysis
-* Visualizations include:
-
-  * Bar charts
-  * Histograms
-  * Category-wise comparisons
-  * Price vs. rating insights
-
----
-
-### 🗂️ Project Structure (Clean, Professional & Easy to Understand)
-
-```
-Banggood_Product_Data_Pipeline/
+```text
+Banggood_Project/
 │
 ├── data/
-│   ├── raw/                 # Original scraped data (as-is)
-│   └── clean/               # Cleaned and analysis-ready datasets
+│   ├── raw/                # Unprocessed scraped data
+│   └── clean/              # Ready-to-use CSV files
 │
 ├── scripts/
-│   ├── scraper.py           # Collects product data from Banggood
-│   ├── cleaning.py          # Cleans and transforms raw data
-│   ├── eda.py               # Exploratory data analysis & insights
-│   ├── database.py          # SQLite database logic (tables & queries)
-│   └── dashboard.py         # Streamlit app for interactive analysis
+│   ├── banggood_scraper.py # Web scraping logic
+│   ├── cleaning.py         # Data pre-processing
+│   ├── eda.py              # Visual analysis scripts
+│   ├── to_sql.py           # SQL database pipeline
+│   └── dashboard.py        # Streamlit dashboard UI
 │
-├── reports/
-│   ├── figures/             # Charts and visual outputs
-│   └── architecture.png     # High-level pipeline architecture
-│
-├── config/
-│   └── settings.py          # Centralized configuration (paths, DB name)
-│
-├── requirements.txt         # Python dependencies
-├── README.md                # Project overview & usage guide
-└── main.py                  # Runs the full pipeline step-by-step
-```
-
-**How this structure helps:**
-
-* Keeps each step of the pipeline clear and organized
-* Makes the code easy to read for reviewers and interviewers
-* Allows smooth scaling or future cloud migration (AWS/GCP)
-* Follows a real-world, professional data engineering layout
-
----
-
-### ⚙️ Tools & Technologies Used
-
-* **Python**
-* **Pandas, NumPy**
-* **Matplotlib, Seaborn**
-* **SQLite & SQL**
-* **Streamlit**
-* **Git & GitHub**
-
----
-
-### ▶️ How to Run the Project
-
-**Run the Scraper**
-
-```bash
-python scripts/banggood_scraper.py
-```
-
-**Clean the Data**
-
-```bash
-python scripts/cleaning.py
-```
-
-**Run EDA**
-
-```bash
-python scripts/eda.py
-```
-
-**Store Data in SQL**
-
-```bash
-python scripts/to_sql.py
-```
-
-**Launch the Dashboard**
-
-```bash
-streamlit run scripts/dashboard.py
-```
-
----
-
-### 📌 Why This Project Matters (Reviewer Notes)
-
-* Demonstrates **end-to-end data engineering thinking**
-* Clean separation of scraping, transformation, storage, and visualization
-* SQL integration shows readiness for real-world data systems
-* Streamlit dashboard highlights business-focused data storytelling
-* Codebase structured for scalability and future cloud migration
-
----
-
-### 👨‍💻 Author
-
-**Qayas Abbasi**
-Cloud Data Engineer | Python Developer | Data Pipeline Enthusiast
-
----
-
-⭐ *If you find this project useful, feel free to star the repository. Feedback and contributions are always welcome!*
-
-
+├── reports/                # Architecture diagrams & screenshots
+├── requirements.txt        # Project dependencies
+└── main.py                 # Main execution script
